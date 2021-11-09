@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: taska1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: taska1
+  template:
+    metadata:
+      labels:
+        app: taska1
+    spec:
+      containers:
+      - name: taska1
+        image: nginx
+        ports:
+        - containerPort: 80
