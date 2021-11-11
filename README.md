@@ -27,7 +27,7 @@ kubectl get pods -l app=taska2
 ```
 View services deployed
 ```
-kubectl exec <podname> — printenv | grep SERVICE
+kubectl exec <podname> -- printenv | grep SERVICE
 ```
 Our service will not be deployed as we need to create the Service before the replica. 
 First scale the replicas to 0:
