@@ -23,7 +23,7 @@ kubectl apply -f service.yaml
 ```
 View pod status to affirm it is running
 ```
-kubectl get pods -l app=taska1
+kubectl get pods -l app=taska2
 ```
 View services deployed
 ```
@@ -32,18 +32,18 @@ kubectl exec <podname> — printenv | grep SERVICE
 Our service will not be deployed as we need to create the Service before the replica. 
 First scale the replicas to 0:
 ```
-kubectl scale deployment taska1 --replicas=0 
+kubectl scale deployment taska2 --replicas=0 
 ```
 Then scale the replicas back up to 2:
 ```
-kubectl scale deployment taska1 --replicas=2 
+kubectl scale deployment taska2 --replicas=2 
 ```
 View pod status to affirm it is running
 ```
-kubectl get pods -l app=taska1
+kubectl get pods -l app=taska2
 ```
 Now check that the service has been deployed:
 ```
 kubectl exec <podname> -- printenv | grep SERVICE
 ```
-Variables TASKA1_SERVICE_PORT and TASKA1_SERVICE_HOST should be found under the list of services deployed
+Variables TASKA2_SERVICE_PORT and TASKA2_SERVICE_HOST should be found under the list of services deployed

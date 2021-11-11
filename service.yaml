@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: taska1
+  name: taska2
   labels:
-    app: taska1
+    app: taska2
 spec:
   selector:
-    app: taska1
+    app: taska2
   ports:
     - protocol: TCP
       port: 80
